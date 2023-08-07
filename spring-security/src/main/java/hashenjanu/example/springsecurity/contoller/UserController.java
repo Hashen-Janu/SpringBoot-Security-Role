@@ -3,6 +3,7 @@ package hashenjanu.example.springsecurity.contoller;
 import hashenjanu.example.springsecurity.entity.User;
 import hashenjanu.example.springsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
@@ -26,12 +27,16 @@ public class UserController {
     }
 
     @GetMapping({"for-admin"})
+    @PreAuthorize("hashRole('Admin')")
     public String forAdmin(){
-        return "this url is only acssesible to admin";
+
+        return "this url is only accessible to admin";
     }
 
     @GetMapping({"for-user"})
+    @PreAuthorize("hashAnyRole('User','Admin')")
     public String forUser(){
-        return "this url is only acssesible to user";
+
+        return "this url is only accessible to user";
     }
 }
