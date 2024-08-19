@@ -11,6 +11,9 @@ export class HeaderComponent {
   }
   toggleMenu(){
     this.menuService.toggle();
+  }
 
+  public isLoggedIn(){
+    return this
   }
 }

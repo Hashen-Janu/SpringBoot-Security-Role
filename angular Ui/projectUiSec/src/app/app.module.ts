@@ -18,8 +18,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/login/login.component';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
-import {FormsModule} from "@angular/forms";
+
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import { SignupComponent } from './components/signup/signup.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +36,8 @@ import {HttpClientModule} from "@angular/common/http";
     AdminComponent,
     UserComponent,
     LoginComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,11 @@ import {HttpClientModule} from "@angular/common/http";
     MatSidenavModule,
     MatListModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

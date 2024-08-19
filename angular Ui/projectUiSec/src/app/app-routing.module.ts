@@ -6,8 +6,10 @@ import {AdminComponent} from "./components/admin/admin.component";
 import {UserComponent} from "./components/user/user.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ForbiddenComponent} from "./components/forbidden/forbidden.component";
+import {SignupComponent} from "./components/signup/signup.component";
 
 const routes: Routes = [
+  {path: '',component:SignupComponent},
   {path: 'cars',component:CarComponent},
   {path: 'home',component:HomeComponent},
   {path: 'admin',component:AdminComponent},
